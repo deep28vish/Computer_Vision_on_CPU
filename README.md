@@ -64,7 +64,7 @@ Read more about OPENVINO [here](https://docs.openvinotoolkit.org/latest/index.ht
 sudo docker run -it -e DISPLAY=$DISPLAY --network=host -d --name opv1 -v $HOME/Documents/Computer_Vision_on_CPU/:/home/ --privileged --user root openvino/ubuntu18_data_dev 
 
 ```
-The above command will post a message that the it was unable to find the 'openvino/ubuntu18_data_dev ' locally and will start downloading 8.58 GB of container, this is a one time process. 
+The above command will post a message that it was unable to find the 'openvino/ubuntu18_data_dev ' locally and will start downloading 8.58 GB of container, this is a one time process. 
 
 
 
