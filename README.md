@@ -418,6 +418,7 @@ gst-inspect-1.0 | grep gva
 
 gst-launch-1.0 -v videotestsrc pattern=snow ! video/x-raw,width=1280,height=720 ! xvimagesink
 ```
+SINK is responsible for display output, try *ximagesink*, *autovideosink* and hold on to it for all the pipelines.
 Pipelines:
 * **Detection**: ```gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! decodebin ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json device=CPU threshold=0.75 inference-interval=1 nireq=4 ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false```
 * **Detection+Tracking**: ```gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! decodebin ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json device=CPU threshold=0.75 inference-interval=1 nireq=4 ! queue ! gvatrack tracking-type=short-term ! queue ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false```
