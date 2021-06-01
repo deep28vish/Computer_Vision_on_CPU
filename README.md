@@ -211,9 +211,7 @@ DEVICE ::: CPU
 THRESHOLD ::: 0.75
 ##############################################################################
 GST PIPELINE::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
+gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! decodebin ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json device=CPU threshold=0.75 inference-interval=1 nireq=4 ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false
 ##############################################################################
 PIPELINE ROLLS IN ::----------->>>23:59:59
 (gst-plugin-scanner:4769): GStreamer-WARNING **: 
@@ -254,7 +252,7 @@ DEVICE ::: CPU
 THRESHOLD ::: 0.75
 ##############################################################################
 GST PIPELINE::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
+gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! decodebin ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json device=CPU threshold=0.75 inference-interval=1 nireq=4 ! queue ! gvatrack tracking-type=short-term ! queue ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false
 ##############################################################################
 PIPELINE ROLLS IN ::----------->>>23:59:59
 (gst-plugin-scanner:6295): GStreamer-WARNING **: 1
@@ -294,7 +292,7 @@ DEVICE ::: CPU
 THRESHOLD ::: 0.75
 ##############################################################################
 GST PIPELINE::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
+gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! decodebin ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json device=CPU threshold=0.75 inference-interval=1 nireq=4 ! queue ! gvatrack tracking-type=short-term ! queue ! gvaclassify model=model_intel/person-attributes-recognition-crossroad-0230/FP32/person-attributes-recognition-crossroad-0230.xml model-proc=model_proc/person-attributes-recognition-crossroad-0230.json reclassify-interval=1 device=CPU object-class=person ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false
 ##############################################################################
 PIPELINE ROLLS IN ::----------->>>00:00:00
 (gst-plugin-scanner:6939): GStreamer-WARNING **: 
@@ -341,7 +339,7 @@ DEVICE ::: CPU
 THRESHOLD ::: 0.75
 ##############################################################################
 GST PIPELINE::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
+gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! decodebin ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json device=CPU threshold=0.75 inference-interval=1 nireq=4 ! queue ! gvatrack tracking-type=short-term ! queue ! gvaclassify model=model_intel/person-attributes-recognition-crossroad-0230/FP32/person-attributes-recognition-crossroad-0230.xml model-proc=model_proc/person-attributes-recognition-crossroad-0230.json reclassify-interval=1 device=CPU object-class=person ! queue ! gvaclassify model=model_intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml model-proc=model_proc/vehicle-attributes-recognition-barrier-0039.json reclassify-interval=10 device=CPU object-class=vehicle ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false
 ##############################################################################
 PIPELINE ROLLS IN ::----------->>>23:59:59
 (gst-plugin-scanner:7712): GStreamer-WARNING **: 
