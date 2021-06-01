@@ -135,48 +135,9 @@ opv1
 ```
 Now by running *STEP 1-C)* again you will able to see the container running. And now lets continue to running the **Computer Vision model**.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### DL-STREAMER
 
 Gstreamer is an oldschool video management application and is made up of component blocks called as plugins/elements, INTEL has developed its own set of plugins/elements that can be easily used with Gstreamer and this conjugate environment is called [DL-STREAMER](https://github.com/openvinotoolkit/dlstreamer_gst). More about intel plugins/elements [here](https://github.com/openvinotoolkit/dlstreamer_gst/wiki/Elements).
-
-
-
-
 
 **STEP 3-A)**  - To  check for plugins/elements:
 
@@ -200,8 +161,6 @@ gvapython:  gvapython: Python callback provider
 ```
 **gvadetect,gvatrack,gvaclassify,gvawatermark** are some of the elements we will need to run the pipeline. You may get bunch of WARNING** before getting the above list , ignore the warning and make sure gva elements are present in your list.
 
-
-
 **DISCLAIMER** :- We have 3 versions of each variation of 4 types of Computer Vision models i.e. 12 files. Each version is having different type of SINK element (gst-element) namely - **xvimagesink, ximagesink and autovideosink.** 
 
 **STEP 3-B)** - Run the below line to check which of the 3 sinks mentioned above are working for you, you may get result in all 3 or just one. IF you are not getting output in any sink you need to try *STEP 2-A)* again to give display access to container.
@@ -220,7 +179,7 @@ gst-launch-1.0 -v videotestsrc pattern=snow ! video/x-raw,width=1280,height=720 
 gst-launch-1.0 -v videotestsrc pattern=snow ! video/x-raw,width=1280,height=720 ! autovideosink
 ```
 
-[IMAGE]
+![Image]()
 
 If all three VERSIONS are working for you feel free to use any version .sh file as you wish. But if suppose only V2 is giving the output , you must use all the .sh files with v2 versions.
 
