@@ -1,0 +1,34 @@
+only_detection_v1
+
+gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! decodebin ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json device=CPU threshold=0.75 inference-interval=1 nireq=4 ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false
+
+only_detection_track_v1
+
+gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! decodebin ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json device=CPU threshold=0.75 inference-interval=1 nireq=4 ! queue ! gvatrack tracking-type=short-term ! queue ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false
+
+only_detection_track_person_classify_one_v1
+
+gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! decodebin ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json device=CPU threshold=0.75 inference-interval=1 nireq=4 ! queue ! gvatrack tracking-type=short-term ! queue ! gvaclassify model=model_intel/person-attributes-recognition-crossroad-0230/FP32/person-attributes-recognition-crossroad-0230.xml model-proc=model_proc/person-attributes-recognition-crossroad-0230.json reclassify-interval=1 device=CPU object-class=person ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false
+
+only_detection_track_person_car_classify_two_v1
+
+gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! decodebin ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json device=CPU threshold=0.75 inference-interval=1 nireq=4 ! queue ! gvatrack tracking-type=short-term ! queue ! gvaclassify model=model_intel/person-attributes-recognition-crossroad-0230/FP32/person-attributes-recognition-crossroad-0230.xml model-proc=model_proc/person-attributes-recognition-crossroad-0230.json reclassify-interval=1 device=CPU object-class=person ! queue ! gvaclassify model=model_intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml model-proc=model_proc/vehicle-attributes-recognition-barrier-0039.json reclassify-interval=10 device=CPU object-class=vehicle ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false
+
+adv_detection_tracking_classification
+
+gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! qtdemux ! avdec_h264 max_threads=4 ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json threshold=0.75 inference-interval=1 model-instance-id=detect cpu-throughput-streams=4 nireq=1 ie-config=CPU_BIND_THREAD=NO,CPU_THREADS_NUM=16 ! queue ! gvatrack tracking-type=short-term ! queue ! gvaclassify model=model_intel/person-attributes-recognition-crossroad-0230/FP32/person-attributes-recognition-crossroad-0230.xml model-proc=model_proc/person-attributes-recognition-crossroad-0230.json reclassify-interval=1 device=CPU object-class=person ! queue ! gvaclassify model=model_intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml model-proc=model_proc/vehicle-attributes-recognition-barrier-0039.json reclassify-interval=10 device=CPU object-class=vehicle ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false
+
+
+
+
+adv_detection_tracking_classification_lite
+
+gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! qtdemux ! avdec_h264 max_threads=4 ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP16-INT8/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json threshold=0.75 inference-interval=10 model-instance-id=detect cpu-throughput-streams=4 nireq=1 ie-config=CPU_BIND_THREAD=NO,CPU_THREADS_NUM=16 ! queue ! gvatrack tracking-type=short-term ! queue ! gvaclassify model=model_intel/person-attributes-recognition-crossroad-0230/FP16-INT8/person-attributes-recognition-crossroad-0230.xml model-proc=model_proc/person-attributes-recognition-crossroad-0230.json reclassify-interval=10 device=CPU object-class=person ! queue ! gvaclassify model=model_intel/vehicle-attributes-recognition-barrier-0039/FP32/vehicle-attributes-recognition-barrier-0039.xml model-proc=model_proc/vehicle-attributes-recognition-barrier-0039.json reclassify-interval=10 device=CPU object-class=vehicle ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false
+
+
+
+
+
+
+
+
