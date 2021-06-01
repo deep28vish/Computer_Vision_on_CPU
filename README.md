@@ -433,5 +433,20 @@ Get your CCTV RTSP from [here](https://www.getscw.com/decoding/rtsp), and replac
 
 #### Saving Output Inf. Video to .mp4
 ```gst-launch-1.0 filesrc location=traffic_cam_intel.mp4 ! decodebin ! gvadetect model=model_intel/person-vehicle-bike-detection-crossroad-0078/FP32/person-vehicle-bike-detection-crossroad-0078.xml model-proc=model_proc/person-vehicle-bike-detection-crossroad-0078.json device=CPU threshold=0.75 inference-interval=1 nireq=4 ! queue ! gvawatermark ! videoconvert ! x264enc ! mp4mux ! filesink location=traffic_cam_intel_output.mp4```
-> > > > > > > >
-## L
+***
+# Extra materials on COMPUTER VISION
+> [TensorFlow Object-Detection for Videos onWindows-10](https://medium.com/@deep12vish/tensorflow-object-detection-for-videos-onwindows-10-1c1a9ffd6cac)
+> [TensorFlow Object Detection in Windows (under 30 lines)](https://medium.com/@deep12vish/tensorflow-object-detection-in-windows-under-30-lines-d6776586c4ab)
+> [Practical aspects to select a Model for Object Detection](https://medium.com/@deep12vish/practical-aspects-to-select-a-model-for-object-detection-c704055ab325)
+> [Setting up TensorFlow 1.14 in bare Windows](https://medium.com/@deep12vish/setting-up-tensorflow-1-14-in-bare-windows-adc429ab792c)
+
+### Computer Vision on GPU
+> [Computer Vision (AI) in Production using Nvida-DeepStream](https://vdeepvision.medium.com/computer-vision-ai-in-production-using-nvida-deepstream-6c90d3daa8a5)
+
+### GIT HUB Repos
+* [Open-CV Perks](https://github.com/deep28vish/openCV-perks)
+* [Object-detection-Videos-OpenCV](https://github.com/deep28vish/Object-detection-Videos-OpenCV)
+* [Object-Detection-Webcam-OpenCV](https://github.com/deep28vish/Object-Detection-Webcam-OpenCV)
+* [TensorFLow-Object_detection-Images-and-Videos-Windows10](https://github.com/deep28vish/TensorFLow-Object_detection-Images-and-Videos-Windows10)
+* [DeepStream](https://github.com/deep28vish/DeepStream)
+
