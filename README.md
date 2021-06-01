@@ -91,7 +91,7 @@ Now we have a container named 'opv1' which is made out of IMAGE 'openvino/ubuntu
 
 **STEP 2)** - Accessing the container.
 
-**STEP 2-A)** - To see the VIDEO OUT, we need to grant some permissions by: 
+**STEP 2-A)** - To see the VIDEO OUT, we need to grant some permissions from HOST by using the following command:
 ```bash
 kuk@kuk:~$ xhost +
 access control disabled, clients can connect from any host
