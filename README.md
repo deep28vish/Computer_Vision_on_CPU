@@ -378,4 +378,6 @@ root@kuk:/home# /opt/intel/openvino/deployment_tools/demo/demo_security_barrier_
 ```
 After some downloading of required files and IR models and you will see the below image.
 
-![Image]()
+![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/anpr.png)
+
+
