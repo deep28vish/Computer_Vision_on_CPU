@@ -179,35 +179,13 @@ gst-launch-1.0 -v videotestsrc pattern=snow ! video/x-raw,width=1280,height=720 
 gst-launch-1.0 -v videotestsrc pattern=snow ! video/x-raw,width=1280,height=720 ! autovideosink
 ```
 
-![Image]()
+![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/test_src.png)
 
 If all three VERSIONS are working for you feel free to use any version .sh file as you wish. But if suppose only V2 is giving the output , you must use all the .sh files with v2 versions.
 
 INTEL uses *XML & BIN* file along with *proc* files , all the required files are stored in this repository under model_intel & model_proc. The pipelines are the one responsible for running inference on the video and all the .sh file present will run a pipeline but have easy to understand format, which you can edit and try new possibilities.
 
 ### Running Inference on CPU via DL-STREAMER
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 * **STEP 4-A)** - Only Detection , class - Person, Vehicle , Bike on video at 30+fps on CPU only. We are going here with V1 here in examples, you must go with what ever version works for you. ```./only_detection_v1.sh``` 
 
@@ -252,7 +230,7 @@ FpsCounter(1sec): total=41.85 fps, number-streams=1, per-stream=41.85 fps
 
 ```
 
-[IMAGE]
+![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/only_detection_v1.png)
 
 * **STEP 4-B)** - Detection and Tracking for Person, Vehicle, Bike , every object will be assigned a unique tracking number. ```./only_detection_track_v1.sh``` 
 
@@ -292,16 +270,7 @@ New clock: GstSystemClock
 FpsCounter(1sec): total=28.59 fps, number-streams=1, per-stream=28.59 fps
 ```
 
-[IMAGE]
-
-
-
-
-
-
-
-
-
+![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/only_detection_track_v1.png)
 
 * **STEP 4-C)** - Detection , Tracking and classification of person attributes such as :*"MALE:","FEMLAE:","has_bag","has_backpack","has_hat","has_longsleeves",       "has_longpants","has_longhair","has_coat_jacket"* ```./only_detection_track_person_classify_one_v1.sh``` 
 
@@ -340,8 +309,7 @@ Setting pipeline to PLAYING ...
 New clock: GstSystemClock
 FpsCounter(1sec): total=29.42 fps, number-streams=1, per-stream=39.42 fps
 ```
-[IMAGE]
-
+![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/only_detection_track_person_classify_one_v1.png)
 
 * **STEP 4-D)** - Detection, tracking and classification on person attributes and vehicle. Person attributes same as mentioned in *STEP 4-C)* and vehicles attributes like: 
 
@@ -388,11 +356,15 @@ New clock: GstSystemClock
 FpsCounter(1sec): total=30.85 fps, number-streams=1, per-stream=30.85 fps
 
 ```
-
+![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/only_detection_track_person_car_classify_two_v1.png)
 * **STEP 4-E)** - 
 This is all achieved via collaboration between INTEL ELEMENTS and GST ELEMENTS. Upon running the above models you might see 99%-100% CPU USAGE to control this and tweak some parameters there is another .sh file ```./adv_detection_tracking_classification.sh``` run this file and you might have somewhat different CPU stats. Explore the files and pipelines to make the best out of it.
 
-[cpu stats IMAGE]
+![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/adv_detection_tracking_classification.png)
+
+* **STEP 4-F)** - ```./adv_detection_tracking_classification_lite.sh```  is the LITE version unlike above given model this one uses the *INT8* weights and is therefore faster than conventional *FP32* which we have been using so far. It is also a bit easy on CPU cores and can give you up to 60+ FPS on 6 core machine.
+ 
+![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/adv_detection_tracking_classification_lite.png)
 
 
 
