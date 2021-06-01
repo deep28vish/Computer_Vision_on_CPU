@@ -436,8 +436,14 @@ Get your CCTV RTSP from [here](https://www.getscw.com/decoding/rtsp), and replac
 ***
 # Extra materials on COMPUTER VISION
 > [TensorFlow Object-Detection for Videos onWindows-10](https://medium.com/@deep12vish/tensorflow-object-detection-for-videos-onwindows-10-1c1a9ffd6cac)
+
+
 > [TensorFlow Object Detection in Windows (under 30 lines)](https://medium.com/@deep12vish/tensorflow-object-detection-in-windows-under-30-lines-d6776586c4ab)
+
+
 > [Practical aspects to select a Model for Object Detection](https://medium.com/@deep12vish/practical-aspects-to-select-a-model-for-object-detection-c704055ab325)
+
+
 > [Setting up TensorFlow 1.14 in bare Windows](https://medium.com/@deep12vish/setting-up-tensorflow-1-14-in-bare-windows-adc429ab792c)
 
 ### Computer Vision on GPU
