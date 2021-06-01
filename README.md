@@ -365,10 +365,9 @@ This is all achieved via collaboration between INTEL ELEMENTS and GST ELEMENTS. 
 ![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/adv_detection_tracking_classification_lite.png)
 
 ***
-***
 
 ### License Plate Detection Demo
-INTEL has lot many models in its artillery which you can find [here](https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/intel/index.md). And still if you need to use your own model based on YOLOv3, SSD or any such famous architecture you can follow [this](https://docs.openvinotoolkit.org/latest/openvino_docs_get_started_get_started_linux.html) guide. Remeber you need *IR -  Intermediate Representation* format to run the inference. Jsut chnage the path in DL_pipeline as given above and you are good to go.
+INTEL has lot many models in its artillery which you can find [here](https://github.com/openvinotoolkit/open_model_zoo/blob/master/models/intel/index.md). And still if you need to use your own model based on YOLOv3, SSD or any such famous architecture you can follow [this](https://docs.openvinotoolkit.org/latest/openvino_docs_get_started_get_started_linux.html) guide. Remeber you need *IR -  Intermediate Representation* format to run the inference. Just chnage the path in DL_pipeline as given above and you are good to go.
 
 ![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/intel_formats.png)
 
@@ -379,5 +378,11 @@ root@kuk:/home# /opt/intel/openvino/deployment_tools/demo/demo_security_barrier_
 After some downloading of required files and IR models and you will see the below image.
 
 ![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/anpr.png)
+
+***
+***
+## SUMMARY
+
+```bash
 
 
