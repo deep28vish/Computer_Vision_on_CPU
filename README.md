@@ -47,7 +47,7 @@ Docker version 20.10.6, build 370c289
 Open Terminal and move to 'Documents' folder and follow clone this repository.
 
 ```bash
-git clone git clone https://github.com/deep28vish/Computer_Vision_on_CPU.git
+git clone https://github.com/deep28vish/Computer_Vision_on_CPU.git
 ```
 
 
@@ -61,7 +61,7 @@ Read more about OPENVINO [here](https://docs.openvinotoolkit.org/latest/index.ht
 
 
 ```bash
-sudo docker run -it -e DISPLAY=$DISPLAY --network=host -d --name opv1 -v $HOME/Desktop/cv_on_cpu/:/home/ --privileged --user root openvino/ubuntu18_data_dev 
+sudo docker run -it -e DISPLAY=$DISPLAY --network=host -d --name opv1 -v $HOME/Documents/Computer_Vision_on_CPU/:/home/ --privileged --user root openvino/ubuntu18_data_dev 
 
 ```
 The above command will post a message that the it was unable to find the 'openvino/ubuntu18_data_dev ' locally and will start downloading 8.58 GB of container, this is a one time process. 
