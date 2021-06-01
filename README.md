@@ -6,7 +6,7 @@ This Git hub repo will allow you to run Computer vision model on your INTEL base
 
 > By the end you will be running Multiple Object Detection, Tracking, Classification on People and Vehciles at 30+ FPS on your CPU only. 
 ***
-
+![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/sample.png)
 
 Article - 
 
