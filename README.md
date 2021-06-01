@@ -14,7 +14,7 @@ Also Read [Computer Vision on GPU](https://vdeepvision.medium.com/computer-visio
 
 #### Requirements:
 * INTEL CPU 
-* LINUX 18.04 LTS
+* UBUNTU 18.04 LTS
 * DOCKER
 * Minimum 15 GB HDD
 * Minimum 4 GB RAM
