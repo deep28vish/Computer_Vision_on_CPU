@@ -402,14 +402,16 @@ cd /home/${USERNAME}/Documents/
 
 git clone https://github.com/deep28vish/Computer_Vision_on_CPU.git
 ```
-Inside Container
+To get Docker Container
 ```bash
 sudo docker run -it -e DISPLAY=$DISPLAY --network=host -d --name opv1 -v $HOME/Documents/Computer_Vision_on_CPU/:/home/ --privileged --user root openvino/ubuntu18_data_dev 
 
 xhost +
 
 sudo docker exec -it --workdir /home --user root opv1 bash
-
+```
+Inside Docker Container:
+```bash
 gst-inspect-1.0 | grep gva
 
 gst-launch-1.0 -v videotestsrc pattern=snow ! video/x-raw,width=1280,height=720 ! xvimagesink
