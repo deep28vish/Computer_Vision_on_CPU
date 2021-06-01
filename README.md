@@ -86,7 +86,7 @@ kuk@kuk:~$ sudo docker ps
 CONTAINER ID   IMAGE                        COMMAND       CREATED        STATUS         PORTS     NAMES
 8a1727f0861e   openvino/ubuntu18_data_dev   "/bin/bash"   24 hours ago   Up 3 seconds             opv1
 ```
-Now we have a container named 'opv1' which is made out of IMAGE 'openvino/ubuntu18_data_dev'. And as we can see the container is running. We will get inside the container to run our mode.
+Now we have a container named 'opv1' which is made out of IMAGE 'openvino/ubuntu18_data_dev'. And as we can see the container is running. We will get inside the container to run our model.
 
 
 **STEP 2)** - Accessing the container.
