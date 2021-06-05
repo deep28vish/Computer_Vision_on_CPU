@@ -36,7 +36,7 @@ THRESHOLD=0.75
 INFRENCE_INTERVAL=1
 ###################################################################################
 #SINK_ELEMENT="videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=xvimagesink sync=false"
-SINK_ELEMENT="! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=ximagesink sync=false"
+SINK_ELEMENT="videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=ximagesink sync=false"
 #SINK_ELEMENT="! videoconvert ! gvafpscounter ! fpsdisplaysink video-sink=autovideosink sync=false"
 ###################################################################################
 PIPELINE="gst-launch-1.0 filesrc location=${LOCATION} ! decodebin ! gvadetect model=${DETECTION_MODEL} model-proc=${DETECTION_MODEL_PROC} device=${DEVICE} threshold=${THRESHOLD} inference-interval=${INFRENCE_INTERVAL} nireq=4 ! ${TRACK} ! queue ! gvawatermark ! videoconvert ! gvafpscounter ! ${SINK_ELEMENT}"
