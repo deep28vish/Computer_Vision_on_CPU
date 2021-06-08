@@ -8,7 +8,7 @@ This Git hub repo will allow you to run Computer vision model on your INTEL base
 ***
 ![Image](https://github.com/deep28vish/Computer_Vision_on_CPU/blob/master/imgs/sample.png)
 
-Article - 
+Article - [Computer Vision on CPU](https://vdeepvision.medium.com/computer-vision-on-cpu-c0beb301185a)
 
 Also Read [Computer Vision on GPU](https://vdeepvision.medium.com/computer-vision-ai-in-production-using-nvida-deepstream-6c90d3daa8a5) , to learn how to deploy COMPUTER VISION model on NVIDIA GPU in 5 mins.
 
